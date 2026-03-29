@@ -23,6 +23,10 @@ def home():
 def reset_post():
     return env.reset()
 
+@app.get("/reset")
+def reset():
+    return env.reset()
+
 
 @app.get("/state")
 def state():
