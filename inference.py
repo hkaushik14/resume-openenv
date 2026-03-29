@@ -1,5 +1,3 @@
-# inference.py
-
 from env import ResumeEnv
 from baseline import simple_agent
 
