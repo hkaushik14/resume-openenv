@@ -1,0 +1,25 @@
+name: resume-screening-env
+description: Simple OpenEnv for resume screening
+version: 1.0
+
+actions:
+  type: string
+  enum:
+    - shortlist
+    - reject
+
+observations:
+  type: object
+  properties:
+    resume:
+      type: string
+    job:
+      type: string
+
+reward:
+  type: number
+
+tasks:
+  - easy
+  - medium
+  - hard
