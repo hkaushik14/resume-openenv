@@ -1,5 +1,3 @@
-# app.py
-
 from fastapi import FastAPI
 from pydantic import BaseModel
 from env import ResumeEnv
@@ -9,7 +7,7 @@ from grader import grade
 app = FastAPI()
 env = ResumeEnv()
 
-# Request model for step/grader
+# Request model
 class Action(BaseModel):
     action: str
 
@@ -19,10 +17,16 @@ def home():
     return {"message": "Resume OpenEnv running"}
 
 
+# ✅ IMPORTANT: POST reset (OpenEnv requires this format)
 @app.post("/reset")
 def reset_post():
-    return env.reset()
+    obs = env.reset()
+    return {
+        "observation": obs
+    }
 
+
+# Optional GET reset (for manual testing)
 @app.get("/reset")
 def reset():
     return env.reset()
