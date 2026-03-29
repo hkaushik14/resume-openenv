@@ -7,7 +7,6 @@ from grader import grade
 app = FastAPI()
 env = ResumeEnv()
 
-# Request model
 class Action(BaseModel):
     action: str
 
@@ -17,18 +16,13 @@ def home():
     return {"message": "Resume OpenEnv running"}
 
 
-# ✅ IMPORTANT: POST reset (OpenEnv requires this format)
-@app.post("/reset")
-def reset_post():
-    obs = env.reset()
-    return {
-        "observation": obs
-    }
-
-
-# Optional GET reset (for manual testing)
+# ✅ BOTH GET + POST (IMPORTANT)
 @app.get("/reset")
 def reset():
+    return env.reset()
+
+@app.post("/reset")
+def reset_post():
     return env.reset()
 
 
