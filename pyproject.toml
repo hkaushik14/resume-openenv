@@ -1,0 +1,16 @@
+[project]
+name = "resume-openenv"
+version = "0.1.0"
+description = "Resume screening OpenEnv environment"
+authors = [
+    {name = "Harsh Kaushik"}
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
