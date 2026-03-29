@@ -80,3 +80,13 @@ https://harsh494-resume-openenv.hf.space
 ```bash
 pip install fastapi uvicorn
 py -m uvicorn app:app --reload
+
+---
+title: Resume OpenEnv
+emoji: 🚀
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_file: server/app.py
+pinned: false
+---
