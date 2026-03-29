@@ -19,8 +19,8 @@ def home():
     return {"message": "Resume OpenEnv running"}
 
 
-@app.get("/reset")
-def reset():
+@app.post("/reset")
+def reset_post():
     return env.reset()
 
 
