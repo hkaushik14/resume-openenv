@@ -10,11 +10,11 @@ env = ResumeEnv()
 class Action(BaseModel):
     action: str
 
-
 @app.get("/")
 def home():
     return {"message": "Resume OpenEnv running"}
 
+<<<<<<< HEAD:app.py
 
 # ✅ BOTH GET + POST (IMPORTANT)
 @app.get("/reset")
@@ -26,39 +26,33 @@ def reset_post():
     return env.reset()
 
 
+=======
+@app.post("/reset")
+def reset():
+    return env.reset()
+
+>>>>>>> 1db793d (updating):server/app.py
 @app.get("/state")
 def state():
     return env.state()
 
-
 @app.post("/step")
 def step(data: Action):
-    if env.current_task is None:
-        return {"error": "Call /reset first"}
-
     return env.step(data.action)
-
 
 @app.post("/grader")
 def grader_endpoint(data: Action):
-    if env.current_task is None:
-        return {"error": "Call /reset first"}
-
     correct = env.current_task["answer"]
     score = grade(data.action, correct)
-
     return {"score": score}
-
 
 @app.get("/tasks")
 def get_tasks():
     return tasks
 
-
 @app.get("/baseline")
 def baseline():
     from baseline import simple_agent
-
     scores = []
 
     for _ in range(3):
