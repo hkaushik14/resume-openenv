@@ -14,7 +14,6 @@ class Action(BaseModel):
 def home():
     return {"message": "Resume OpenEnv running"}
 
-<<<<<<< HEAD:app.py
 
 # ✅ BOTH GET + POST (IMPORTANT)
 @app.get("/reset")
@@ -26,12 +25,6 @@ def reset_post():
     return env.reset()
 
 
-=======
-@app.post("/reset")
-def reset():
-    return env.reset()
-
->>>>>>> 1db793d (updating):server/app.py
 @app.get("/state")
 def state():
     return env.state()
