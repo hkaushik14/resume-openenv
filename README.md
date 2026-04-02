@@ -51,6 +51,7 @@ A simple rule-based agent:
 
 **Baseline Score:** `1.0`
 
+
 ---
 
 ## 🔗 API Endpoints
