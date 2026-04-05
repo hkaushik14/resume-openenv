@@ -1,50 +1,50 @@
-# 🚀 Resume Screening OpenEnv
+#  Resume Screening OpenEnv
 
-## 📌 Description
+##  Description
 This project simulates a real-world **resume screening task** where an AI agent decides whether to **shortlist** or **reject** a candidate based on their resume and job description.
 
 ---
 
-## 🎯 Objective
+##  Objective
 - Analyze resume text  
 - Compare with job requirements  
 - Take decision: `shortlist` or `reject`  
 
 ---
 
-## ⚙️ Action Space
+##  Action Space
 - `shortlist`
 - `reject`
 
 ---
 
-## 👀 Observation Space
+##  Observation Space
 Each step returns:
 - `resume` → candidate profile  
 - `job` → job description  
 
 ---
 
-## 🧪 Tasks
+##  Tasks
 - **Easy** → clear match → shortlist  
 - **Medium** → weak match → reject  
 - **Hard** → irrelevant profile → reject  
 
 ---
 
-## 🏆 Reward Function
+##  Reward Function
 - +1 → correct decision  
 - -1 → incorrect decision  
 
 ---
 
-## 🤖 Grader
+##  Grader
 - Returns score between **0.0 and 1.0**  
 - Deterministic and reproducible  
 
 ---
 
-## 📊 Baseline
+##  Baseline
 A simple rule-based agent:
 - If resume contains *Python + Machine Learning* → shortlist  
 - Otherwise → reject  
@@ -54,7 +54,7 @@ A simple rule-based agent:
 
 ---
 
-## 🔗 API Endpoints
+##  API Endpoints
 
 | Endpoint | Method | Description |
 |----------|--------|------------|
@@ -68,15 +68,15 @@ A simple rule-based agent:
 
 ---
 
-## 🐳 Deployment
+##  Deployment
 Deployed on Hugging Face Spaces using Docker.
 
-👉 Live Demo:  
+ Live Demo:  
 https://harsh494-resume-openenv.hf.space
 
 ---
 
-## 🛠️ Run Locally
+##  Run Locally
 
 ```bash
 pip install fastapi uvicorn
