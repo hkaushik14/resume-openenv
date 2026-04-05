@@ -36,7 +36,7 @@ Each step returns:
 - +1 → correct decision  
 - -1 → incorrect decision  
 
----
+--
 
 ##  Grader
 - Returns score between **0.0 and 1.0**  
