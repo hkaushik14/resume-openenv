@@ -2,7 +2,7 @@ name: resume-screening-env
 description: Resume screening OpenEnv environment
 version: 1.0
 
-entrypoint: app:app
+entrypoint: server.app:main
 
 actions:
   type: string
