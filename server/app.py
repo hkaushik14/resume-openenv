@@ -14,8 +14,12 @@ class Action(BaseModel):
 def home():
     return {"message": "Resume OpenEnv running"}
 
-@app.post("/reset")
+@app.get("/reset")
 def reset():
+    return env.reset()
+
+@app.post("/reset")
+def reset_post():
     return env.reset()
 
 @app.get("/state")
@@ -49,3 +53,14 @@ def baseline():
 
     avg_score = sum(scores) / len(scores)
     return {"baseline_score": avg_score}
+
+
+# ✅ IMPORTANT: OpenEnv entrypoint
+def main():
+    return app
+
+
+# ✅ Optional: for local running with uvicorn
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("server.app:app", host="0.0.0.0", port=7860, reload=True)
